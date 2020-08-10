@@ -18,7 +18,7 @@ public class TesteBatch {
 			connection.setAutoCommit(false);
 			PreparedStatement pstmt = connection.prepareStatement(SQL);
 			
-			for(int i=1;i<= 1000;i++){
+			for(int i=1;i<= 2000;i++){
 				
 				int rand = (int)(Math.random()*1000);
 				
