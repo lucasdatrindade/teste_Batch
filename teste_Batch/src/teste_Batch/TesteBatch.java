@@ -10,7 +10,7 @@ public class TesteBatch {
 
 	 public static void main(String[] args) throws SQLException {
 			Connection connection = Connections.getConnection();
-			String SQL = "insert into tb_customer_account values (?,?,?,?,?)";
+			String SQL = "INSERT INTO tb_customer_account VALUES (?,?,?,?,?)";
 			int batchSize = 250;
 			int count = 0;
 			int[] result;			
@@ -40,7 +40,7 @@ public class TesteBatch {
 			}
 	        
 	        //REALIZAR CALCULOS APOS DADOS INSERIDOS
-	        String SQL2 = "SELECT Tb_customer_account.* FROM Tb_customer_account WHERE vl_total > 560 "
+	        String SQL2 = "SELECT * FROM Tb_customer_account WHERE vl_total > 560 "
 	        		+ "AND (id_customer > 1500 AND id_customer < 2700) ORDER BY vl_total DESC";
 	        Statement stmt = connection.createStatement();
 	        ResultSet rs = stmt.executeQuery(SQL2);
